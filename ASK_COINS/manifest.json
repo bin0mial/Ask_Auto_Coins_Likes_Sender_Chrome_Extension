@@ -1,0 +1,23 @@
+{
+	"name": "ASKFM Coins",
+	"version": "1.0.0",
+	"manifest_version": 2,
+	"description": "Add coins to every page.",
+	"icons": { "16": "red heart.png",
+           "48": "red heart.png",
+          "128": "red heart.png" },
+	"browser_action": {
+		"default_popup" : "sketch/index.html"
+	},
+	"content_scripts":[
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content.js"]
+		}
+	],
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": true
+	},
+	"permissions": ["activeTab","tabs"]
+}
